@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WiFi Configuration</title>
+</head>
+<body>
+    <h1>WiFi Configuration</h1>
+    <form action="/config" method="post" onsubmit="return validateForm()">
+        <label for="wifiName">wifi</label>
+        <input type="text" id="wifi" name="wifi" required><br><br>
+        
+        <label for="wifiPassword">password</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmpassword" name="confirmpassword" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+      <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmpassword = document.getElementById("confirmpassword").value;
+
+            if (password !== confirmpassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
